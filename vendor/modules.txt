@@ -1,8 +1,8 @@
 # github.com/decred/dcrd/dcrec/secp256k1/v4 v4.4.0
 ## explicit; go 1.17
 github.com/decred/dcrd/dcrec/secp256k1/v4
-# github.com/eclipse-xfsc/crypto-provider-core v1.4.1
-## explicit; go 1.24.0
+# github.com/eclipse-xfsc/crypto-provider-core v1.4.1-crypto
+## explicit; go 1.23.0
 github.com/eclipse-xfsc/crypto-provider-core
 github.com/eclipse-xfsc/crypto-provider-core/types
 # github.com/goccy/go-json v0.10.5
