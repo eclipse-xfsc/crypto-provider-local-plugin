@@ -2,8 +2,6 @@ module github.com/eclipse-xfsc/crypto-provider-local-plugin
 
 go 1.23.0
 
-toolchain go1.23.8
-
 require github.com/eclipse-xfsc/crypto-provider-core v1.4.1-crypto
 
 require (
