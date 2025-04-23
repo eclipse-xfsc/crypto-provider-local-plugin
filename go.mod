@@ -2,7 +2,7 @@ module github.com/eclipse-xfsc/crypto-provider-local-plugin
 
 go 1.23.0
 
-require github.com/eclipse-xfsc/crypto-provider-core v1.4.1-crypto
+require github.com/eclipse-xfsc/crypto-provider-core v1.4.1-goarchv1230
 
 require (
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.4.0 // indirect
