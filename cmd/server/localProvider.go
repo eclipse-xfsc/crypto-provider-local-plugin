@@ -17,24 +17,37 @@ import (
 	"encoding/pem"
 	"errors"
 	"fmt"
+	"os"
 	"regexp"
 
-	"github.com/eclipse-xfsc/crypto-provider-core/types"
+	"github.com/eclipse-xfsc/crypto-provider-core/v2/types"
+	"github.com/sirupsen/logrus"
 )
-
-var Plugin localProviderModule //export Plugin Symbol, dont
-
-type localProviderModule struct{}
-
-func (l *localProviderModule) GetCryptoProvider() types.CryptoProvider {
-	return new(LocalCryptoProvider)
-}
 
 var namespaces = make(map[string]bool, 0)
 var aesKeys = make(map[string]map[string][]byte, 0)
 var rsaKeys = make(map[string]map[string]rsa.PrivateKey, 0)
 var ecDsaKeys = make(map[string]map[string]ecdsa.PrivateKey, 0)
 var edKeys = make(map[string]map[string]ed25519.PrivateKey, 0)
+
+type LocalCryptoProvider struct {
+}
+
+func main() {
+	addr := os.Getenv("CRYPTO_PROVIDER_LOCAL_ADDRESS")
+	if addr == "" {
+		addr = "0.0.0.0:50052"
+	}
+	logrus.Info("CRYPTO_PROVIDER_LOCAL ADDR: " + addr)
+	impl := new(LocalCryptoProvider)
+	err, stop := types.Start(impl, addr)
+
+	defer stop()
+
+	if err != nil {
+		logrus.Error(err)
+	}
+}
 
 func (l LocalCryptoProvider) CreateCryptoContext(context types.CryptoContext) error {
 	ctx := buildPathNameSpace(context)
