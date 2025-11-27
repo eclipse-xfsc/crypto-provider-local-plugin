@@ -6,7 +6,7 @@ toolchain go1.24.10
 
 require (
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.4.0 // indirect
-	github.com/eclipse-xfsc/crypto-provider-core/v2 v2.2.0 // indirect
+	github.com/eclipse-xfsc/crypto-provider-core/v2 v2.2.1 // indirect
 	github.com/goccy/go-json v0.10.5 // indirect
 	github.com/lestrrat-go/blackmagic v1.0.4 // indirect
 	github.com/lestrrat-go/httpcc v1.0.1 // indirect
